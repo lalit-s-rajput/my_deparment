@@ -1,5 +1,12 @@
 <div class="result-container">
   <h1>My Department</h1>
+  <button (click)="addManagerFirst()" class="button-container">+Manager</button>
+  <button (click)="addDeveloperFirst()" class="button-container">
+    +Developer
+  </button>
+  <button (click)="addTesterFirst()" class="button-container">
+    +QA Tester
+  </button>
 </div>
 
 <div class="autocomplete-container">
@@ -17,6 +24,6 @@
       <li *ngFor="let itemData of item.d">developer</li>
       <li *ngFor="let itemData of item.q">QA</li>
     </ul>
-    <!-- <app-manager [item]="item"></app-manager> -->
+    <app-manager [item]="item.m"></app-manager>
   </div>
 </div>

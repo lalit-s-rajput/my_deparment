@@ -1,4 +1,4 @@
-<div [ngStyle]="{ 'margin-left': getStyle() }" class="manage-container">
+<!-- <div [ngStyle]="{ 'margin-left': getStyle() }" class="manage-container">
   <ul>
     &emsp;
     <li class="inline-attach">
@@ -12,7 +12,7 @@
   </ul>
 </div>
 <div class="autocomplete-container">
-  <div *ngFor="let item of managerArray; let i = index">
+  <div *ngFor="let item of _item.m; let i = index">
     <app-manager [left]="i + 1"></app-manager>
   </div>
   <ul>
@@ -20,4 +20,25 @@
       {{ item.role }}
     </li>
   </ul>
+</div> -->
+
+<div *ngFor="let item of _item; let i = index">
+  <ul [ngStyle]="{ 'margin-left': getStyle() }">
+    <li>
+      <button (click)="addManager(item, i)" class="button-container">
+        +Manager
+      </button>
+      <button (click)="addDeveloper(item, i)" class="button-container">
+        +Developer
+      </button>
+      <button (click)="addTester(item, i)" class="button-container">
+        +QA Tester
+      </button>
+    </li>
+  </ul>
+  <ul>
+    <li *ngFor="let itemData of item.d">developer</li>
+    <li *ngFor="let itemData of item.q">QA</li>
+  </ul>
+  <app-manager [item]="item.m"></app-manager>
 </div>
