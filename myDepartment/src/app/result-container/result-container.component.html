@@ -1,0 +1,22 @@
+<div class="result-container">
+  <h1>My Department</h1>
+</div>
+
+<div class="autocomplete-container">
+  <div *ngFor="let item of managerArray; let i = index">
+    <button (click)="addManager(item, i)" class="button-container">
+      +Manager
+    </button>
+    <button (click)="addDeveloper(item, i)" class="button-container">
+      +Developer
+    </button>
+    <button (click)="addTester(item, i)" class="button-container">
+      +QA Tester
+    </button>
+    <ul>
+      <li *ngFor="let itemData of item.d">developer</li>
+      <li *ngFor="let itemData of item.q">QA</li>
+    </ul>
+    <!-- <app-manager [item]="item"></app-manager> -->
+  </div>
+</div>

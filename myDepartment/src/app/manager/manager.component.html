@@ -1,0 +1,23 @@
+<div [ngStyle]="{ 'margin-left': getStyle() }" class="manage-container">
+  <ul>
+    &emsp;
+    <li class="inline-attach">
+      Manager
+      <button (click)="addManager()" class="button-container">+Manager</button>
+      <button (click)="addDeveloper()" class="button-container">
+        +Developer
+      </button>
+      <button (click)="addTester()" class="button-container">+QA Tester</button>
+    </li>
+  </ul>
+</div>
+<div class="autocomplete-container">
+  <div *ngFor="let item of managerArray; let i = index">
+    <app-manager [left]="i + 1"></app-manager>
+  </div>
+  <ul>
+    <li *ngFor="let item of devAndTesterArray; let i = index">
+      {{ item.role }}
+    </li>
+  </ul>
+</div>

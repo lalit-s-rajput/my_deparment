@@ -1,0 +1,17 @@
+.result-container {
+    display: flex;
+    flex-direction: row;
+
+    .button-container {
+        height: 30px;
+        background: green;
+        color: white;
+        cursor: pointer;
+        margin: 25px 10px;
+    }
+
+    .inline-attach {
+        display: flex;
+        flex-direction: row;
+    }
+}
