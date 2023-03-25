@@ -6,14 +6,24 @@ import { Component } from '@angular/core';
   styleUrls: ['./result-container.component.scss'],
 })
 export class ResultContainerComponent {
-  managerArray: { m: object[]; d: Array<number>; q: Array<number> }[] = [
+  managerArray: {
+    m: object[];
+    d: Array<number>;
+    q: Array<number>;
+    mLeft: number;
+  }[] = [
     //{ m: [], d: Array(0), q: Array(0) },
   ];
   devAndTesterArray: { role: string }[] = [];
   addManager(item: any, index: any) {
     //item.m = {m:{},d:1,q:1};
     //this.managerArray.push({ m: [{}], d: Array(0), q: Array(0) });
-    this.managerArray[index].m.push({ m: [], d: Array(0), q: Array(0) });
+    this.managerArray[index].m.push({
+      m: [],
+      d: Array(0),
+      q: Array(0),
+      mLeft: 20,
+    });
   }
   addDeveloper(item: any, index: any) {
     this.managerArray[index].d.push(1);
@@ -26,7 +36,7 @@ export class ResultContainerComponent {
     //this.devAndTesterArray.push({ role: 'tester' });
   }
   addManagerFirst() {
-    this.managerArray.push({ m: [], d: Array(0), q: Array(0) });
+    this.managerArray.push({ m: [], d: Array(0), q: Array(0), mLeft: 0 });
   }
   addDeveloperFirst() {
     this.managerArray[0].d.push(1);

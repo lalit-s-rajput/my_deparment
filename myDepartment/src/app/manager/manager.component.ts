@@ -14,6 +14,7 @@ export class ManagerComponent {
     m: [],
     d: [],
     q: [],
+    mLeft: 0,
   };
   @Input() set item(data: any) {
     if (data) {
@@ -27,7 +28,12 @@ export class ManagerComponent {
   // }
   addManager(item: any, index: any) {
     //item.m = {m:{},d:1,q:1};
-    this._item[index].m.push({ m: [], d: Array(0), q: Array(0) });
+    this._item[index].m.push({
+      m: [],
+      d: Array(0),
+      q: Array(0),
+      mLeft: item.mLeft + 20,
+    });
   }
   addDeveloper(item: any, index: any) {
     this._item[index].d.push(1);
@@ -39,7 +45,7 @@ export class ManagerComponent {
     //item.q += 1;
     //this.devAndTesterArray.push({ role: 'tester' });
   }
-  getStyle() {
-    return `${this._left * 20}px`;
+  getStyle(item: any) {
+    return `${item.mLeft}px`;
   }
 }

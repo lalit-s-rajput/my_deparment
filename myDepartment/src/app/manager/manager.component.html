@@ -23,7 +23,7 @@
 </div> -->
 
 <div *ngFor="let item of _item; let i = index">
-  <ul [ngStyle]="{ 'margin-left': getStyle() }">
+  <ul [ngStyle]="{ 'margin-left': getStyle(item) }">
     <li>
       <button (click)="addManager(item, i)" class="button-container">
         +Manager
@@ -36,7 +36,7 @@
       </button>
     </li>
   </ul>
-  <ul>
+  <ul [ngStyle]="{ 'margin-left': getStyle(item) }">
     <li *ngFor="let itemData of item.d">developer</li>
     <li *ngFor="let itemData of item.q">QA</li>
   </ul>
